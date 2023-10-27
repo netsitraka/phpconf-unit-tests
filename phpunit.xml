@@ -10,6 +10,9 @@
          failOnRisky="true"
          failOnWarning="true"
          colors="true">
+    <php>
+        <env name="GITHUB_ACCESS_TOKEN" value="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"/>
+    </php>
     <testsuites>
         <testsuite name="default">
             <directory>tests</directory>

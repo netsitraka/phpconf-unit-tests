@@ -6,7 +6,7 @@ namespace Test;
 
 use PHPUnit\Framework\TestCase;
 
-class GithubClientTest extends TestCase
+class TransactionServiceTest extends TestCase
 {
     public function testOk(): void
     {
