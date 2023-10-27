@@ -2,8 +2,6 @@
 
 namespace PhpConf;
 
-use GuzzleHttp\Client;
-
 class Account
 {
     public function __construct(private readonly string $ownerEmail, private float $balance)
@@ -25,11 +23,9 @@ class Account
 
     public function credit(float $amount): void
     {
-        $this->balance += $amount;
     }
 
     public function debit(float $amount): void
     {
-        $this->balance -= $amount;
     }
 }

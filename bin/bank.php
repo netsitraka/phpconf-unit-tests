@@ -6,7 +6,6 @@ ini_set('error_reporting', E_ALL);
 require __DIR__ . '/../vendor/autoload.php';
 
 use PhpConf\Account;
-use PhpConf\EmailNotifier as EmailNotifierAlias;
 use PhpConf\TransactionService;
 
 $printAccount = fn(Account $a) => sprintf("-> %s have %.2f$\n", $a->getOwnerEmail(), $a->getBalance());
@@ -22,7 +21,3 @@ $transaction->transfer(amount: 200.0, from: $john, to: $jane);
 echo "After the transaction 1\n";
 echo $printAccount($john);
 echo $printAccount($jane);
-
-
-$notifier = new EmailNotifierAlias();
-$notifier->notify('test@test.com', 'Hello', 'OK');
