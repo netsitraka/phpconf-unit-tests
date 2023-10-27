@@ -1,8 +1,15 @@
 <?php
 
-namespace tests;
+declare(strict_types=1);
 
-class GithubClientTest
+namespace Test;
+
+use PHPUnit\Framework\TestCase;
+
+class GithubClientTest extends TestCase
 {
-
+    public function testOk(): void
+    {
+        $this->assertTrue(true);
+    }
 }
