@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace PhpConf;
 
-class Transaction
+readonly class Transaction
 {
-    public function __construct(private readonly Notifier $notifier, private readonly TransferFeeCalculator $transferFeeCalculator)
+    public function __construct(private Notifier $notifier, private FeeCalculator $transferFeeCalculator)
     {
     }
 

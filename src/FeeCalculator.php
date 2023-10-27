@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace PhpConf;
 
-interface TransferFeeCalculator
+interface FeeCalculator
 {
     public function calculateFeet(float $amount): float;
 }

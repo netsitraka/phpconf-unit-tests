@@ -7,7 +7,7 @@ namespace Test;
 use PhpConf\Account;
 use PhpConf\Notifier;
 use PhpConf\Transaction;
-use PhpConf\TransferFeeCalculator;
+use PhpConf\FeeCalculator;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\MockObject\Stub;
 use PHPUnit\Framework\TestCase;
@@ -18,7 +18,7 @@ class TransactionTest extends TestCase
     private Account $to;
     private Notifier|MockObject $notifier;
     private Transaction $transaction;
-    private TransferFeeCalculator|Stub $transferFeeCalculator;
+    private FeeCalculator|Stub $transferFeeCalculator;
 
     protected function setUp(): void
     {
@@ -26,7 +26,7 @@ class TransactionTest extends TestCase
         $this->from = new Account('account1@example.com', 500);
         $this->to = new Account('account2@example.com', 400);
         $this->notifier = $this->createMock(Notifier::class);
-        $this->transferFeeCalculator = $this->createStub(TransferFeeCalculator::class);
+        $this->transferFeeCalculator = $this->createStub(FeeCalculator::class);
 
         $this->transaction = new Transaction($this->notifier, $this->transferFeeCalculator);
     }

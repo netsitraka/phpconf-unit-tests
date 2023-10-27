@@ -6,6 +6,8 @@ ini_set('error_reporting', E_ALL);
 require __DIR__ . '/../vendor/autoload.php';
 
 use PhpConf\Account;
+use PhpConf\DefaultFeeCalculator;
+use PhpConf\EmailNotifier;
 use PhpConf\Transaction;
 
 $printAccount = fn(Account $a) => sprintf("-> %s have %.2f$\n", $a->getOwnerEmail(), $a->getBalance());
@@ -15,7 +17,7 @@ echo $printAccount($john);
 $jane = new Account('jane@email.com', 100.0);
 echo $printAccount($jane);
 
-$transaction = new Transaction();
+$transaction = new Transaction(new EmailNotifier(), new DefaultFeeCalculator());
 $transaction->transfer(amount: 200.0, from: $john, to: $jane);
 
 echo "After the transaction 1\n";
