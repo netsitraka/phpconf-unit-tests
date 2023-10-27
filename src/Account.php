@@ -13,9 +13,6 @@ class Account
         return $this->balance;
     }
 
-    /**
-     * @return string
-     */
     public function getOwnerEmail(): string
     {
         return $this->ownerEmail;
@@ -23,9 +20,11 @@ class Account
 
     public function credit(float $amount): void
     {
+        $this->balance += $amount;
     }
 
     public function debit(float $amount): void
     {
+        $this->balance -= $amount;
     }
 }
